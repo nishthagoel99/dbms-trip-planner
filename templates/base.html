@@ -1,0 +1,24 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Trip Plan</title>
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<div class="jumbotron text-center">
+<nav>
+  <h1>Trip Planner</h1>
+    <div class="row">
+   <li><a href="{{ url_for('user.login') }}">Log In</a>
+   <li><a href="{{ url_for('user.register') }}">Register</a>
+    </div>
+</nav>
+</div>
+<section class="content">
+<div class="container">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</div>
+</section>

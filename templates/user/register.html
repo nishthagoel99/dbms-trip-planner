@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block header %}
+ <div class="container text-center">
+  <h1>{% block title %}Register{% endblock %}</h1></div>
+{% endblock %}
+
+<br>
+{% block content %}
+  <div class="container">
+  <form method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="name" class="pull-left">Name</label>
+    <input name="name" id="name" class="form-control" required>
+    <label for="email" class="pull-left">Email</label>
+    <input name="email" id="email" class="form-control" required>
+    <label for="password" class="pull-left">Password</label>
+    <input type="password" name="password" id="password" class="form-control" required>
+    <label for="address" class="pull-left">Address</label>
+    <input name="address" id="address" class="form-control" required>
+    <label for="phone" class="pull-left">Phone</label>
+    <input name="phone" id="phone" class="form-control" required>
+    <label for="image" class="pull-left">Image</label>
+    <input name="image" id="image" type="file" class="form-control">
+    <label for="birthday" class="pull-left">Birthday</label>
+    <input type ="date" format="YYYY/MM/DD" placeholder="YYYY/MM/DD" name="birthday" id="birthday" class="form-control" required>
+    <br>
+    <button class="btn btn-lg btn-danger"  type="submit" value="Register">Register</button>
+  </div>
+  </form>
+  </div>
+{% endblock %}
